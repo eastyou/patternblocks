@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>图案积木裁剪片</title>
+<style>
+@page { size: A4; margin: 0 }
+* { box-sizing: border-box }
+html, body { margin: 0; padding: 0 }
+body { background: #eceff2; color: #1f2933; font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }
+.page { position: relative; width: 210mm; min-height: 297mm; padding: 12mm; box-sizing: border-box; overflow: hidden; background: #ffffff; margin: 0 auto 6mm; page-break-after: always; }
+.page:last-child { page-break-after: auto }
+.page-header { position: absolute; top: 4mm; left: 12mm; right: 12mm; height: 5mm; display: flex; align-items: center; justify-content: space-between; font-size: 9pt; color: #52606d; }
+.page-footer { position: absolute; bottom: 4mm; left: 12mm; right: 12mm; height: 5mm; display: flex; align-items: center; justify-content: space-between; font-size: 8.5pt; color: #7b8794; }
+.blocks { display: block; width: 186mm; height: 273mm; }
+.polygon-block { fill: #ffe4a3; stroke: #a87400; stroke-width: 0.6; stroke-linejoin: round; }
+.polygon-legend { fill: #ffe4a3; stroke: #a87400; stroke-width: 0.5; stroke-linejoin: round; }
+.shape-label { fill: #5f4400; font-size: 6px; font-weight: 600; text-anchor: middle; dominant-baseline: central; }
+.legend { display: block; width: 100%; height: auto; margin: 4mm 0 6mm; }
+.legend-label { fill: #52606d; font-size: 3.2px; text-anchor: middle; }
+h1 { margin: 0 0 2mm; font-size: 22pt; letter-spacing: 0.04em; }
+h2 { margin: 0 0 3mm; font-size: 15pt; }
+p { margin: 0 0 2mm; line-height: 1.55; }
+.subtitle { color: #52606d; font-size: 10.5pt; margin-bottom: 6mm; }
+.section-title { font-size: 11pt; font-weight: 600; margin: 6mm 0 2mm; color: #323f4b; }
+table.area-table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+table.area-table caption { text-align: left; font-size: 9pt; color: #7b8794; padding-bottom: 1.5mm; }
+table.area-table th, table.area-table td { border: 0.3mm solid #c9d2dc; padding: 1.6mm 2mm; text-align: left; }
+table.area-table th { background: #f5f7fa; font-weight: 600; }
+table.area-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+ul.tips { margin: 0; padding-left: 5mm; font-size: 9.5pt; line-height: 1.7; color: #3e4c59; }
+ol.challenges { margin: 0; padding-left: 6mm; }
+ol.challenges li { margin-bottom: 3mm; font-size: 10pt; }
+.answer-box { margin-top: 1.5mm; height: 14mm; border: 0.3mm dashed #9aa5b1; border-radius: 1.5mm; color: #b0b8c1; font-size: 8pt; padding: 1.5mm 2mm; }
+ol.answers { margin: 0; padding-left: 6mm; font-size: 10pt; line-height: 1.8; }
+.note { margin-top: 5mm; font-size: 9pt; color: #616e7c; border-left: 1mm solid #cbd2d9; padding-left: 3mm; }
+@media print { body { background: #ffffff } .page { margin: 0 } }
+</style>
+</head>
+<body>
+<section class="page">
+<div class="page-header"><span>图案积木裁剪片</span><span>A4 · 1:1 打印</span></div>
+<h1>图案积木裁剪片</h1>
+<p class="subtitle">统一边长 30 mm · 五种图案积木 · A4 1:1 打印</p>
+<svg class="legend" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.00 40" role="img" aria-label="五种积木图例" preserveAspectRatio="xMidYMid meet">
+<polygon class="polygon-legend" points="18.60,21.43 10.60,7.57 26.60,7.57" /><text class="shape-label" x="18.60" y="12.19" font-size="3.52px">三</text>
+<text class="legend-label" x="18.60" y="36.00">等边三角形</text>
+<polygon class="polygon-legend" points="43.80,7.57 59.80,7.57 67.80,21.43 51.80,21.43" /><text class="shape-label" x="55.80" y="14.50" font-size="3.52px">菱</text>
+<text class="legend-label" x="55.80" y="36.00">菱形</text>
+<polygon class="polygon-legend" points="77.00,7.57 109.00,7.57 101.00,21.43 85.00,21.43" /><text class="shape-label" x="93.00" y="14.50" font-size="3.52px">梯</text>
+<text class="legend-label" x="93.00" y="36.00">梯形</text>
+<polygon class="polygon-legend" points="146.20,14.50 138.20,28.36 122.20,28.36 114.20,14.50 122.20,0.64 138.20,0.64" /><text class="shape-label" x="130.20" y="14.50" font-size="3.52px">六</text>
+<text class="legend-label" x="130.20" y="36.00">正六边形</text>
+<polygon class="polygon-legend" points="159.40,6.50 175.40,6.50 175.40,22.50 159.40,22.50" /><text class="shape-label" x="167.40" y="14.50" font-size="3.52px">方</text>
+<text class="legend-label" x="167.40" y="36.00">正方形</text>
+</svg>
+<div class="section-title">面积对照</div>
+<table class="area-table">
+<caption>面积对照表（统一边长 30 mm，三角形族面积比 1:2:3:6）</caption>
+<thead><tr><th>形状</th><th>边长</th><th>面积</th><th>相当于几个三角形</th></tr></thead>
+<tbody>
+<tr><td>等边三角形</td><td class="num">30 mm</td><td class="num">389.71 mm²</td><td class="num">1</td></tr>
+<tr><td>菱形</td><td class="num">30 mm</td><td class="num">779.42 mm²</td><td class="num">2</td></tr>
+<tr><td>梯形</td><td class="num">30 mm</td><td class="num">1169.13 mm²</td><td class="num">3</td></tr>
+<tr><td>正六边形</td><td class="num">30 mm</td><td class="num">2338.27 mm²</td><td class="num">6</td></tr>
+<tr><td>正方形</td><td class="num">30 mm</td><td class="num">900.00 mm²</td><td class="num">2.31</td></tr>
+</tbody>
+</table>
+<div class="section-title">使用说明</div>
+<ul class="tips">
+<li>打印：A4 纸、缩放 100%（1:1），不要选择「适合页面」。</li>
+<li>剪裁：沿每个图形的实线轮廓剪下，图形中心的小字仅作分类提示。</li>
+<li>分类：三角形的边长与菱形、梯形、正六边形一致，可以无缝拼合。</li>
+<li>挑战：裁剪页之后附有拼图挑战卡与答案页，答案页可先折叠收起。</li>
+</ul>
+<div class="page-footer"><span>图案积木 · 统一边长 30 mm</span><span>第 1 / 5 页</span></div>
+</section>
+<section class="page">
+<div class="page-header"><span>图案积木裁剪片</span><span>边长 30 mm · 共 20 片</span></div>
+<svg class="blocks" xmlns="http://www.w3.org/2000/svg" viewBox="0.00 0.00 186.00 273.00" width="186.00mm" height="273.00mm" preserveAspectRatio="xMidYMid meet" role="img" aria-label="图案积木裁剪页">
+<polygon class="polygon-block" points="15.00,25.98 0.00,0.00 30.00,0.00" /><text class="shape-label" x="15.00" y="8.66" font-size="6.60px">三</text>
+<polygon class="polygon-block" points="49.00,25.98 34.00,0.00 64.00,0.00" /><text class="shape-label" x="49.00" y="8.66" font-size="6.60px">三</text>
+<polygon class="polygon-block" points="83.00,25.98 68.00,0.00 98.00,0.00" /><text class="shape-label" x="83.00" y="8.66" font-size="6.60px">三</text>
+<polygon class="polygon-block" points="117.00,25.98 102.00,0.00 132.00,0.00" /><text class="shape-label" x="117.00" y="8.66" font-size="6.60px">三</text>
+<polygon class="polygon-block" points="151.00,25.98 136.00,0.00 166.00,0.00" /><text class="shape-label" x="151.00" y="8.66" font-size="6.60px">三</text>
+<polygon class="polygon-block" points="15.00,55.96 0.00,29.98 30.00,29.98" /><text class="shape-label" x="15.00" y="38.64" font-size="6.60px">三</text>
+<polygon class="polygon-block" points="34.00,29.98 64.00,29.98 79.00,55.96 49.00,55.96" /><text class="shape-label" x="56.50" y="42.97" font-size="6.60px">菱</text>
+<polygon class="polygon-block" points="83.00,29.98 113.00,29.98 128.00,55.96 98.00,55.96" /><text class="shape-label" x="105.50" y="42.97" font-size="6.60px">菱</text>
+<polygon class="polygon-block" points="132.00,29.98 162.00,29.98 177.00,55.96 147.00,55.96" /><text class="shape-label" x="154.50" y="42.97" font-size="6.60px">菱</text>
+<polygon class="polygon-block" points="0.00,59.96 30.00,59.96 45.00,85.94 15.00,85.94" /><text class="shape-label" x="22.50" y="72.95" font-size="6.60px">菱</text>
+<polygon class="polygon-block" points="49.00,59.96 79.00,59.96 94.00,85.94 64.00,85.94" /><text class="shape-label" x="71.50" y="72.95" font-size="6.60px">菱</text>
+<polygon class="polygon-block" points="98.00,59.96 128.00,59.96 143.00,85.94 113.00,85.94" /><text class="shape-label" x="120.50" y="72.95" font-size="6.60px">菱</text>
+<polygon class="polygon-block" points="0.00,89.94 60.00,89.94 45.00,115.92 15.00,115.92" /><text class="shape-label" x="30.00" y="102.93" font-size="6.60px">梯</text>
+<polygon class="polygon-block" points="64.00,89.94 124.00,89.94 109.00,115.92 79.00,115.92" /><text class="shape-label" x="94.00" y="102.93" font-size="6.60px">梯</text>
+<polygon class="polygon-block" points="0.00,119.92 60.00,119.92 45.00,145.90 15.00,145.90" /><text class="shape-label" x="30.00" y="132.91" font-size="6.60px">梯</text>
+<polygon class="polygon-block" points="64.00,119.92 124.00,119.92 109.00,145.90 79.00,145.90" /><text class="shape-label" x="94.00" y="132.91" font-size="6.60px">梯</text>
+<polygon class="polygon-block" points="0.00,149.90 60.00,149.90 45.00,175.88 15.00,175.88" /><text class="shape-label" x="30.00" y="162.89" font-size="6.60px">梯</text>
+<polygon class="polygon-block" points="64.00,149.90 124.00,149.90 109.00,175.88 79.00,175.88" /><text class="shape-label" x="94.00" y="162.89" font-size="6.60px">梯</text>
+<polygon class="polygon-block" points="60.00,205.87 45.00,231.85 15.00,231.85 0.00,205.87 15.00,179.88 45.00,179.88" /><text class="shape-label" x="30.00" y="205.87" font-size="6.60px">六</text>
+<polygon class="polygon-block" points="124.00,205.87 109.00,231.85 79.00,231.85 64.00,205.87 79.00,179.88 109.00,179.88" /><text class="shape-label" x="94.00" y="205.87" font-size="6.60px">六</text>
+</svg>
+<div class="page-footer"><span>沿实线剪下</span><span>第 2 / 5 页</span></div>
+</section>
+<section class="page">
+<div class="page-header"><span>图案积木裁剪片</span><span>边长 30 mm · 共 10 片</span></div>
+<svg class="blocks" xmlns="http://www.w3.org/2000/svg" viewBox="0.00 0.00 186.00 273.00" width="186.00mm" height="273.00mm" preserveAspectRatio="xMidYMid meet" role="img" aria-label="图案积木裁剪页">
+<polygon class="polygon-block" points="60.00,25.98 45.00,51.96 15.00,51.96 0.00,25.98 15.00,0.00 45.00,0.00" /><text class="shape-label" x="30.00" y="25.98" font-size="6.60px">六</text>
+<polygon class="polygon-block" points="124.00,25.98 109.00,51.96 79.00,51.96 64.00,25.98 79.00,0.00 109.00,0.00" /><text class="shape-label" x="94.00" y="25.98" font-size="6.60px">六</text>
+<polygon class="polygon-block" points="60.00,81.94 45.00,107.92 15.00,107.92 0.00,81.94 15.00,55.96 45.00,55.96" /><text class="shape-label" x="30.00" y="81.94" font-size="6.60px">六</text>
+<polygon class="polygon-block" points="124.00,81.94 109.00,107.92 79.00,107.92 64.00,81.94 79.00,55.96 109.00,55.96" /><text class="shape-label" x="94.00" y="81.94" font-size="6.60px">六</text>
+<polygon class="polygon-block" points="128.00,66.94 158.00,66.94 158.00,96.94 128.00,96.94" /><text class="shape-label" x="143.00" y="81.94" font-size="6.60px">方</text>
+<polygon class="polygon-block" points="0.00,111.92 30.00,111.92 30.00,141.92 0.00,141.92" /><text class="shape-label" x="15.00" y="126.92" font-size="6.60px">方</text>
+<polygon class="polygon-block" points="34.00,111.92 64.00,111.92 64.00,141.92 34.00,141.92" /><text class="shape-label" x="49.00" y="126.92" font-size="6.60px">方</text>
+<polygon class="polygon-block" points="68.00,111.92 98.00,111.92 98.00,141.92 68.00,141.92" /><text class="shape-label" x="83.00" y="126.92" font-size="6.60px">方</text>
+<polygon class="polygon-block" points="102.00,111.92 132.00,111.92 132.00,141.92 102.00,141.92" /><text class="shape-label" x="117.00" y="126.92" font-size="6.60px">方</text>
+<polygon class="polygon-block" points="136.00,111.92 166.00,111.92 166.00,141.92 136.00,141.92" /><text class="shape-label" x="151.00" y="126.92" font-size="6.60px">方</text>
+</svg>
+<div class="page-footer"><span>沿实线剪下</span><span>第 3 / 5 页</span></div>
+</section>
+<section class="page">
+<div class="page-header"><span>拼图挑战卡</span><span>共 10 题</span></div>
+<h2>拼图挑战卡</h2>
+<p class="subtitle">用裁剪好的积木完成下列任务，并在作答框内画出拼法。</p>
+<ol class="challenges">
+<li><div class="challenge-title">第 1 题：用 2 个等边三角形拼成一个菱形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 2 题：用 3 个等边三角形拼成一个梯形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 3 题：用 6 个等边三角形拼成一个正六边形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 4 题：用 4 个等边三角形拼成两个菱形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 5 题：用 4 个等边三角形拼成一个边长翻倍的大等边三角形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 6 题：用 2 个菱形拼成一个正六边形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 7 题：用 2 个梯形拼成一个正六边形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 8 题：用 3 个菱形拼成两个梯形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 9 题：用 1 个正六边形拆成 3 个菱形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+<li><div class="challenge-title">第 10 题：用 2 个正六边形拆成 4 个梯形。</div>
+<div class="answer-box">作答区（可在框内画出拼法，并写出所用积木数量）</div></li>
+</ol>
+<div class="page-footer"><span>画出你的拼法</span><span>第 4 / 5 页</span></div>
+</section>
+<section class="page">
+<div class="page-header"><span>挑战答案</span><span>参考答案</span></div>
+<h2>挑战答案</h2>
+<p class="subtitle">参考答案：每题的积木种类与数量。</p>
+<ol class="answers">
+<li>第 1 题：2 个等边三角形（题目：用 2 个等边三角形拼成一个菱形。）</li>
+<li>第 2 题：3 个等边三角形（题目：用 3 个等边三角形拼成一个梯形。）</li>
+<li>第 3 题：6 个等边三角形（题目：用 6 个等边三角形拼成一个正六边形。）</li>
+<li>第 4 题：4 个等边三角形（题目：用 4 个等边三角形拼成两个菱形。）</li>
+<li>第 5 题：4 个等边三角形（题目：用 4 个等边三角形拼成一个边长翻倍的大等边三角形。）</li>
+<li>第 6 题：2 个菱形（题目：用 2 个菱形拼成一个正六边形。）</li>
+<li>第 7 题：2 个梯形（题目：用 2 个梯形拼成一个正六边形。）</li>
+<li>第 8 题：3 个菱形（题目：用 3 个菱形拼成两个梯形。）</li>
+<li>第 9 题：1 个正六边形（题目：用 1 个正六边形拆成 3 个菱形。）</li>
+<li>第 10 题：2 个正六边形（题目：用 2 个正六边形拆成 4 个梯形。）</li>
+</ol>
+<p class="note">等边三角形、菱形、梯形、正六边形的面积比为 1:2:3:6；正方形边长同样是统一边长，但面积为边长的平方，不计入该比例。</p>
+<div class="page-footer"><span>对照检查拼法</span><span>第 5 / 5 页</span></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "patternblocks"
+version = "0.1.0"
+description = "图案积木裁剪片：统一边长的几何积木与拼图挑战卡"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "eastyou" }]
+keywords = ["pattern-blocks", "geometry", "classroom", "printable", "teacher", "cli"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: Education",
+]
+
+[project.scripts]
+patternblocks = "patternblocks.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/eastyou/patternblocks"
+Source = "https://github.com/eastyou/patternblocks"
+
+[tool.setuptools]
+packages = ["patternblocks"]
